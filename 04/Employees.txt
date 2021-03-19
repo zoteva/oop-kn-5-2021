@@ -1,0 +1,4 @@
+1	John Doe	Teacher	10	24.2
+2	Jane Doe	Medical Doctor	12	121
+3	John Smith	Accountant	15	96.8
+4	Jane Smith	Programmer	5	150
