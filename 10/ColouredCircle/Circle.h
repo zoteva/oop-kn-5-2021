@@ -6,14 +6,10 @@
 class Circle
 {
     public:
-        // конструктор с подразбиращи се параметри
         Circle(double x = 0, double y = 0, double r = 0);
-        // предефиниран конструктор, с параметри точка и радиус
         Circle(const Point&, double);
-        // деструктор
         ~Circle();
-
-        // селектори
+    
         const Point& getCenter() const
         {
             return center;
@@ -24,24 +20,21 @@ class Circle
             return radius;
         }
 
-        // извеждане на окръжност
         void print() const;
 
-        // мутатори
         void setRadius(double);
         void setCenter(double, double);
         void setCenter(const Point&);
 
-        // проверява дали дадена точка е вътрешна за окръжността
+        // РїСЂРѕРІРµСЂСЏРІР° РґР°Р»Рё РґР°РґРµРЅР° С‚РѕС‡РєР° Рµ РІСЉС‚СЂРµС€РЅР° Р·Р° РѕРєСЂСЉР¶РЅРѕСЃС‚С‚Р°
         bool isInside(const Point& ) const;
-        // функция
+        // РїСЂРѕРІРµСЂСЏРІР° РґР°Р»Рё РґРІРµС‚Рµ РѕРєСЂСЉР¶РЅРѕСЃС‚Рё СЃРµ РїСЂРµСЃРёС‡Р°С‚
         bool intersect(const Circle& ) const;
 
         friend std::istream& operator >> (std::istream&, Circle&);
         friend std::ostream& operator << (std::ostream&, const Circle&);
 
     private:
-        // окръжността се описва с център и радиус
         Point center;
         double radius;
 };
