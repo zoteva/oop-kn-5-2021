@@ -7,7 +7,7 @@
 class ColouredCircle : public Circle
 {
 	public:
-		// ‰ËÌ‡ÏË˜Ì‡ Ô‡ÏÂÚ Á‡ colour => Á‡‰˙ÎÊËÚÂÎÌÓ ÔÓÌÂ ÙÛÌÍˆËËÚÂ ÓÚ rule of 3
+		// –¥–∏–Ω–∞–º–∏—á–Ω–∞ –ø–∞–º–µ—Ç –∑–∞ colour => –∑–∞–¥—ä–ª–∂–∏—Ç–µ–ª–Ω–æ –ø–æ–Ω–µ —Ñ—É–Ω–∫—Ü–∏–∏—Ç–µ –æ—Ç rule of 3
 		ColouredCircle(const Point& center, double radius, const char* colour);
 		ColouredCircle(const ColouredCircle& other);
 		ColouredCircle& operator=(const ColouredCircle& other);
