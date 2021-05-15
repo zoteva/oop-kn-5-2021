@@ -6,10 +6,10 @@
 Circle::Circle(double x, double y, double r)
     : center(x, y), radius(r)
 {
-    // в инциализиращия списък, извикваме конструктора
-    // на класа Point(x, y), за да инициализира член-данната
-    // center; така пропускаме извикването на подразбиращия се
-    // конструктор; остава да инициализираме само radius
+    // РІ РёРЅС†РёР°Р»РёР·РёСЂР°С‰РёСЏ СЃРїРёСЃСЉРє, РёР·РІРёРєРІР°РјРµ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂР°
+    // РЅР° РєР»Р°СЃР° Point(x, y), Р·Р° РґР° РёРЅРёС†РёР°Р»РёР·РёСЂР° С‡Р»РµРЅ-РґР°РЅРЅР°С‚Р°
+    // center; С‚Р°РєР° РїСЂРѕРїСѓСЃРєР°РјРµ РёР·РІРёРєРІР°РЅРµС‚Рѕ РЅР° РїРѕРґСЂР°Р·Р±РёСЂР°С‰РёСЏ СЃРµ
+    // РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ; РѕСЃС‚Р°РІР° РґР° РёРЅРёС†РёР°Р»РёР·РёСЂР°РјРµ СЃР°РјРѕ radius
     // radius = r;
 
     std::cout << "\nCreate Circle" << std::endl;
@@ -19,21 +19,20 @@ Circle::Circle(double x, double y, double r)
 Circle::Circle(const Point& newCenter, double newRadius)
     : center(newCenter), radius(newRadius)
 {
-    // в инициализиращия списък се използва копиращия конструктор на Point
+    // РІ РёРЅРёС†РёР°Р»РёР·РёСЂР°С‰РёСЏ СЃРїРёСЃСЉРє СЃРµ РёР·РїРѕР»Р·РІР° РєРѕРїРёСЂР°С‰РёСЏ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РЅР° Point
     // radius = newRadius;
 
     std::cout << "\nCreate Circle with ( Point, r )" << std::endl;
     print();
 }
 
-// деструктор, само извежда съобщение,защото нямаме динамично заделена памет
+// РґРµСЃС‚СЂСѓРєС‚РѕСЂ, СЃР°РјРѕ РёР·РІРµР¶РґР° СЃСЉРѕР±С‰РµРЅРёРµ,Р·Р°С‰РѕС‚Рѕ РЅСЏРјР°РјРµ РґРёРЅР°РјРёС‡РЅРѕ Р·Р°РґРµР»РµРЅР° РїР°РјРµС‚
 Circle::~Circle()
 {
     std::cout << "\n~Circle() " << std::endl;
     print();
 }
 
-// извеждане на информацията за окръжността
 void Circle::print() const
 {
     std::cout << "Center ";
@@ -42,13 +41,11 @@ void Circle::print() const
     std::cout << " Radius = " << radius << std::endl;
 }
 
-// мутатори
 void Circle::setCenter(const Point& newCenter)
 {
     center = Point(newCenter.getX(), newCenter.getY());
 }
 
-// променяме координатите на центъра
 void Circle::setCenter(double x, double y)
 {
     center = Point(x, y);
@@ -56,7 +53,7 @@ void Circle::setCenter(double x, double y)
 
 void Circle::setRadius(double newRadius)
 {
-    // проверка, валидация?
+    // РїСЂРѕРІРµСЂРєР°, РІР°Р»РёРґР°С†РёСЏ?
     radius = newRadius;
 }
 
@@ -69,8 +66,8 @@ bool Circle::isInside(const Point& point) const
 
 bool Circle::intersect(const Circle& otherCircle) const
 {
-    // d - разстоянието между двата центъра
-    // пресичат се, ако R - r < d < R + r
+    // d - СЂР°Р·СЃС‚РѕСЏРЅРёРµС‚Рѕ РјРµР¶РґСѓ РґРІР°С‚Р° С†РµРЅС‚СЉСЂР°
+    // РїСЂРµСЃРёС‡Р°С‚ СЃРµ, Р°РєРѕ R - r < d < R + r
     // R > r
 
     double dist = center.distance(otherCircle.center);
@@ -87,25 +84,25 @@ std::ostream& operator << (std::ostream& out, const Circle& c)
     return out;
 }
 
-/// (x, y)  r
+// (x, y)  r
 std::istream& operator >> (std::istream& in, Circle& c)
 {
     if(!in) return in;
 
-    /// премахваме първата (
+    // РїСЂРµРјР°С…РІР°РјРµ РїСЉСЂРІР°С‚Р° (
     in.ignore();
 
     double x, y, radius;
-    in >> x; /// четенето спира на ,
+    in >> x; // С‡РµС‚РµРЅРµС‚Рѕ СЃРїРёСЂР° РЅР° ,
 
-    /// премахваме ,
+    // РїСЂРµРјР°С…РІР°РјРµ ,
     in.ignore();
     in >> y;
 
-    /// премахваме )
+    // РїСЂРµРјР°С…РІР°РјРµ )
     in.ignore();
 
-    /// >> пропуска табулацията
+    // >> РїСЂРѕРїСѓСЃРєР° С‚Р°Р±СѓР»Р°С†РёСЏС‚Р°
     in >> radius;
 
     if(in)
