@@ -13,8 +13,8 @@ void Bookstore::copyCollection(const std::vector<PrintEdition*>& otherCollection
 {
 	for (size_t i = 0; i < otherCollection.size(); ++i)
 	{
-		// âèðóòóàëíàòà ôóíêöèÿ clone ùå ñúçäàäå êîïèå íà 
-		// âñÿêî ïå÷àòíî èçäàíèå â other, áèëî òî êíèãà, ñïèñàíèå èëè êîìèêñ
+		// Ð²Ð¸Ñ€ÑƒÑ‚ÑƒÐ°Ð»Ð½Ð°Ñ‚Ð° Ñ„ÑƒÐ½ÐºÑ†Ð¸Ñ clone Ñ‰Ðµ ÑÑŠÐ·Ð´Ð°Ð´Ðµ ÐºÐ¾Ð¿Ð¸Ðµ Ð½Ð° 
+		// Ð²ÑÑÐºÐ¾ Ð¿ÐµÑ‡Ð°Ñ‚Ð½Ð¾ Ð¸Ð·Ð´Ð°Ð½Ð¸Ðµ Ð² other, Ð±Ð¸Ð»Ð¾ Ñ‚Ð¾ ÐºÐ½Ð¸Ð³Ð°, ÑÐ¿Ð¸ÑÐ°Ð½Ð¸Ðµ Ð¸Ð»Ð¸ ÐºÐ¾Ð¼Ð¸ÐºÑ
 		this->mCollection[i] = otherCollection[i]->clone();
 	}
 }
@@ -68,7 +68,7 @@ void Bookstore::setName(const char* _name)
 
 Bookstore& Bookstore::addPrintEdition(const PrintEdition& newPE)
 {
-	// äîáàâÿìå êúì êîëåêöèÿòà äèíàìè÷íî êîïèå íà ïîäàäåíèÿ îáåêò
+	// Ð´Ð¾Ð±Ð°Ð²ÑÐ¼Ðµ ÐºÑŠÐ¼ ÐºÐ¾Ð»ÐµÐºÑ†Ð¸ÑÑ‚Ð° Ð´Ð¸Ð½Ð°Ð¼Ð¸Ñ‡Ð½Ð¾ ÐºÐ¾Ð¿Ð¸Ðµ Ð½Ð° Ð¿Ð¾Ð´Ð°Ð´ÐµÐ½Ð¸Ñ Ð¾Ð±ÐµÐºÑ‚
 	this->mCollection.push_back(newPE.clone());
 
 	return *this;
