@@ -8,8 +8,8 @@ public:
 
 	enum class Periodicity { WEEKLY, MONTHLY, ANNUALY };
 
-	// ÌˇÏ‡ Á‡‰ÂÎˇÌÂ Ì‡ ‰ÓÔ˙ÎÌËÚÂÎÌË ÂÒÛÒË ‚ ÍÓÌÒÚÛÍÚÓ‡ Ì‡ ÍÎ‡Ò‡
-	// => ÌˇÏ‡ ÌÛÊ‰‡ ‰‡ ‰ÂÙËÌË‡ÏÂ ÓÒÚ‡Ì‡ÎËÚÂ ÙÛÌÍˆËË ÓÚ rule of 3 (or 5)
+	// –Ω—è–º–∞ –∑–∞–¥–µ–ª—è–Ω–µ –Ω–∞ –¥–æ–ø—ä–ª–Ω–∏—Ç–µ–ª–Ω–∏ —Ä–µ—Å—É—Ä—Å–∏ –≤ –∫–æ–Ω—Å—Ç—Ä—É–∫—Ç–æ—Ä–∞ –Ω–∞ –∫–ª–∞—Å–∞
+	// => –Ω—è–º–∞ –Ω—É–∂–¥–∞ –¥–∞ –¥–µ—Ñ–∏–Ω–∏—Ä–∞–º–µ –æ—Å—Ç–∞–Ω–∞–ª–∏—Ç–µ —Ñ—É–Ω–∫—Ü–∏–∏ –æ—Ç rule of 3 (or 5)
 	Magazine(const char* name, double price, size_t year, Periodicity period);
 
 	Periodicity getPeriodicity() const;
