@@ -11,6 +11,7 @@ Bookstore::Bookstore(const char* _name)
 
 void Bookstore::copyCollection(const std::vector<PrintEdition*>& otherCollection)
 {
+	this->mCollection.resize(otherCollection.size());
 	for (size_t i = 0; i < otherCollection.size(); ++i)
 	{
 		// вирутуалната функция clone ще създаде копие на 
